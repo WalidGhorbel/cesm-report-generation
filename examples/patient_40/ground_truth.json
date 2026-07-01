@@ -1,0 +1,26 @@
+{
+  "DM": {
+    "R": {
+      "finding": "Upper outer rounded high density mass with indistinct margin is seen. No suspicious microcalcifications. Normal skin thickness and contour of breast.",
+      "birads": "4",
+      "group": "Suspicious"
+    },
+    "L": {
+      "finding": "No speculated mass lesions or suspicious microcalcifications. Upper outer quadrant IMLN is noted. Normal skin thickness and contour of breast.",
+      "birads": "2",
+      "group": "Benign"
+    }
+  },
+  "CESM": {
+    "R": {
+      "finding": "Upper outer rounded regular rim enhancing mass with circumscribed margin (BIRADS 3).",
+      "birads": "3",
+      "group": "Suspicious"
+    },
+    "L": {
+      "finding": "Upper outer IMLN (BIRADS 2).",
+      "birads": "2",
+      "group": "Benign"
+    }
+  }
+}

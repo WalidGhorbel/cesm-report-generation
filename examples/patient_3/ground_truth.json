@@ -1,0 +1,26 @@
+{
+  "DM": {
+    "R": {
+      "finding": "No speculated mass lesions or suspicious microcalcifications. Retroareolar increased density that is tubular in shape likely dilated duct. Normal skin thickness and contour of breast.",
+      "birads": "2",
+      "group": "Benign"
+    },
+    "L": {
+      "finding": "Lower inner quadrant high density irregular shaped mass with speculated margin is seen. No suspicious microcalcifications. Normal skin thickness and contour of breast.",
+      "birads": "5",
+      "group": "Malignant"
+    }
+  },
+  "CESM": {
+    "R": {
+      "finding": "Dilated retroareolar duct (BIRADS 2).",
+      "birads": "2",
+      "group": "Benign"
+    },
+    "L": {
+      "finding": "Lower inner irregular shaped heterogeneously enhancing mass with speculated margin (BIRADS 5).",
+      "birads": "5",
+      "group": "Malignant"
+    }
+  }
+}
