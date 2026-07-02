@@ -112,7 +112,7 @@ streamlit run app.py              # opens at localhost:8501
 Not included in this repo (dataset licensing + size):
 
 - **Dataset**: [CDD-CESM on TCIA](https://doi.org/10.1038/s41597-022-01238-0) — images, reports, and annotations.
-- **Checkpoints**: 4 trained classifiers (`best_birads_{dm,cesm}.pt`, `best_cancer_{dm,cesm}.pt`). Train your own with `BIRADS_and_Cancer_Classifiers.ipynb`, or point `CHECKPOINT_DIR` in `app.py` at existing ones.
+- **Checkpoints**: 4 trained classifiers (`best_birads_{dm,cesm}.pt`, `best_cancer_{dm,cesm}.pt`). 
 
 ---
 
