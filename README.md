@@ -122,7 +122,7 @@ Not included in this repo (dataset licensing + size):
 
    ![Case selection sidebar](screenshots/01-case-selection.png)
 
-2. **Generate the Low Energy (LE) report** — one button runs both right and left breasts at once, whenever an image breast side exists. The image shown is the exact 1024×1024 preprocessed input the model receives, not the raw file.
+2. **Generate the Low Energy (LE) report**: one button runs on existing right and left breasts at once. The image shown is the exact 1024×1024 preprocessed input the model receives, not the raw file.
 
    ![LE images loaded, ready to generate](screenshots/02-le-images-loaded.png)
 
