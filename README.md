@@ -124,7 +124,7 @@ Not included in this repo (dataset licensing + size):
 
 2. **Generate the Low Energy (LE) report**: one button runs on existing right and left breasts at once. The image shown is the exact 1024×1024 preprocessed input the model receives, not the raw file.
 
-   ![LE images loaded, ready to generate](screenshots/02-le-images-loaded.png)
+   ![LE images loaded, ready to generate](screenshots/02-le-images.png)
 
    Each result shows the classifier's category (color-coded, with confidence) and the LLM's illustrative narrative. For bundled examples, it's shown alongside the real radiologist's finding with a **✓ MATCH / ✗ MISMATCH** badge — the fastest way to see actual accuracy rather than take it on faith.
 
@@ -134,7 +134,7 @@ Not included in this repo (dataset licensing + size):
    
    (#validation--known-limitations)).
 
-   ![Grad-CAM attention heatmap](screenshots/04-gradcam-attention.png)
+   ![Grad-CAM attention heatmap](screenshots/04-gradcam.png)
 
 3. **Generate the Contrast-Enhanced (DES) report** — same pattern, run second, matching how the source reports are structured (LE assessment, then a separate contrast-enhanced assessment).
 4. **Review the combined report** — a plain-text view matching the original dataset's report format.
