@@ -141,7 +141,7 @@ Not included in this repo (dataset licensing + size):
 
 ## Known Limitations
 
-**Grad-CAM location is partially reliable.** Gradient-based attention maps are known to
+**Grad-CAM location is partially reliable.** Gradient-based maps are known to
 sometimes highlight dominant image edges rather than the exact region driving a
 prediction — a general characteristic of the technique, not specific to this model. Testing
 against 3 known-location cases confirmed this here too: the vertical (upper/lower) axis
