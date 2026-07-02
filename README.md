@@ -182,12 +182,10 @@ PyTorch · `timm` (ConvNeXtV2-tiny) · Anthropic Claude API (vision) · Qdrant (
 
 ## Citation
 
-If you use this dataset, please cite the original data paper:
+This project is built on the CDD-CESM dataset. If you use the dataset, please cite the original paper:
 
-> Khaled, R., Helal, M., Alfarghaly, O. et al. Categorized contrast enhanced
-> mammography dataset for diagnostic and artificial intelligence research.
-> *Sci Data* 9, 122 (2022). https://doi.org/10.1038/s41597-022-01238-0
+> Khaled, R., Helal, M., Alfarghaly, O. et al. Categorized contrast enhanced mammography
+> dataset for diagnostic and artificial intelligence research. *Sci Data* 9, 122 (2022).
+> https://doi.org/10.1038/s41597-022-01238-0
 
-
-
-If you use or reference this repository itself, see [`CITATION.cff`](CITATION.cff) — GitHub also renders a "Cite this repository" button in the sidebar generated from that file.
+To cite this repository, see [`CITATION.cff`](CITATION.cff), or just hit "Cite this repository" in the sidebar.
