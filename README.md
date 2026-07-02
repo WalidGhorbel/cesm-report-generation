@@ -118,7 +118,7 @@ Not included in this repo (dataset licensing + size):
 
 ## Using the app
 
-1. **Select a case** — load a bundled example (ships with real ground truth, so the model's output is checked live against an actual radiologist's report) or upload your own LE or DES breast image.
+1. **Select a case** — load a bundled example (ships with real ground truth, so the model's output is checked live against an actual radiologist's report) or upload your own Low Eenergy (LE) or Dual-Energy Subtracted (DES) breast image.
 
    ![Case selection sidebar](screenshots/01-case-selection.png)
 
