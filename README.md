@@ -191,5 +191,5 @@ This project is built on the CDD-CESM dataset. If you use the dataset, please ci
 If you reference this project itself, please cite it as:
 
 > Ghorbel, W. (2026). cesm-report-generation: A hybrid classification and generation
-> pipeline for contrast-enhanced spectral mammography.
+> pipeline for Bi-RAD Classification and reports generation for contrast-enhanced spectral mammography.
 > https://github.com/WalidGhorbel/cesm-report-generation
