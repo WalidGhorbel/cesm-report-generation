@@ -130,7 +130,9 @@ Not included in this repo (dataset licensing + size):
 
    ![Real finding vs. generated output, with match badges](screenshots/03-real-vs-generated.png)
 
-   A Grad-CAM attention overlay is shown beneath each image (interpretability caveats noted directly in the app — see [Validation](#validation--known-limitations)).
+   A Grad-CAM attention overlay is shown beneath each image (interpretability caveats noted directly in the app
+   
+   (#validation--known-limitations)).
 
    ![Grad-CAM attention heatmap](screenshots/04-gradcam-attention.png)
 
