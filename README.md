@@ -1,4 +1,4 @@
-# Contrast-Enhanced Mammography From Image to Conditioned Generative Reports
+# Contrast-Enhanced Mammography: From Image to Conditioned Generative Reports
 
 **A hybrid classification + generation pipeline for contrast-enhanced spectral mammography (CESM), built around rigorously testing what each component can and can't do — rather than assuming a general-purpose model can do all of it.**
 
@@ -99,7 +99,7 @@ flowchart LR
 **Prerequisites:** Python 3.11+, [uv](https://docs.astral.sh/uv/), Docker, an Anthropic API key, the CDD-CESM dataset and trained checkpoints (see [Data & checkpoints](#data--checkpoints)).
 
 ```bash
-git clone <repo-url> && cd radrag
+git clone <repo-url> && cd cesm-report-generation
 uv sync
 cp .env.example .env              # add ANTHROPIC_API_KEY
 docker compose up -d              # starts Qdrant (retrieval component)
@@ -117,14 +117,24 @@ Not included in this repo (dataset licensing + size):
 
 ## Using the app
 
-1. **Select a case** — load a bundled example (ships with real ground truth, so the model's output is checked live against an actual radiologist's report) or upload your own LE/DES image pair with a breast side. The image shown is the exact 1024×1024 preprocessed input the model receives, not the raw file.
-2. **Generate the Low Energy (LE) report** — one button runs both breasts at once. Each result shows the classifier's category (color-coded, with confidence), the LLM's illustrative narrative, and a Grad-CAM attention overlay.
+1. **Select a case** — load a bundled example (ships with real ground truth, so the model's output is checked live against an actual radiologist's report) or upload your own LE/DES image pair with a breast side.
+
+   ![Case selection sidebar](screenshots/01-case-selection.png)
+
+2. **Generate the Low Energy (LE) report** — one button runs both breasts at once. The image shown is the exact 1024×1024 preprocessed input the model receives, not the raw file.
+
+   ![LE images loaded, ready to generate](screenshots/02-le-images-loaded.png)
+
+   Each result shows the classifier's category (color-coded, with confidence) and the LLM's illustrative narrative. For bundled examples, it's shown alongside the real radiologist's finding with a **✓ MATCH / ✗ MISMATCH** badge — the fastest way to see actual accuracy rather than take it on faith.
+
+   ![Real finding vs. generated output, with match badges](screenshots/03-real-vs-generated.png)
+
+   A Grad-CAM attention overlay is shown beneath each image (interpretability caveats noted directly in the app — see [Validation](#validation--known-limitations)).
+
+   ![Grad-CAM attention heatmap](screenshots/04-gradcam-attention.png)
+
 3. **Generate the Contrast-Enhanced (DES) report** — same pattern, run second, matching how the source reports are structured (LE assessment, then a separate contrast-enhanced assessment).
 4. **Review the combined report** — a plain-text view matching the original dataset's report format.
-
-For bundled examples, each card shows a **✓ MATCH / ✗ MISMATCH** badge against the real radiologist's finding — this is the fastest way to see the system's actual accuracy rather than take it on faith.
-
-<!-- Add screenshots here once captured, e.g.: ![LE report with match badge](screenshots/le-results.png) -->
 
 ---
 
@@ -157,7 +167,7 @@ A clinical finding surfaced independently of any model, during ingestion validat
 ## Project structure
 
 ```
-radrag/
+cesm-report-generation/
 ├── app.py                        # Streamlit UI
 ├── examples/                     # Bundled cases with real ground truth
 ├── src/
