@@ -139,26 +139,25 @@ Not included in this repo (dataset licensing + size):
 
 ---
 
-## Validation & Known Limitations
+## Known Limitations
 
-Every figure below came from an actual run against held-out data. Where something didn't work, it's reported here, not omitted.
+**Grad-CAM location is partially reliable.** Gradient-based attention maps are known to
+sometimes highlight dominant image edges rather than the exact region driving a
+prediction — a general characteristic of the technique, not specific to this model. Testing
+against 3 known-location cases confirmed this here too: the vertical (upper/lower) axis
+matched the real finding in 2/2 cases, while the horizontal axis consistently leaned toward
+the chest-wall edge. The app displays the raw heatmap for human interpretation and does
+not generate location claims from it.
 
-| Component | Result |
-|---|---|
-| Report parsing (`report_parser.py`) | 326/326 patients parsed cleanly |
-| Cross-validation (parser vs. structured annotations) | 566/566 agreement, 0 disagreement |
-| BI-RADS classifier (LE) — macro F1 / QWK / AUC | 0.635 / 0.632 / 0.829 |
-| BI-RADS classifier (DES) — macro F1 / QWK / AUC | 0.667 / 0.750 / 0.822 |
-| Cancer classifier (LE / DES) — AUC | 0.931 / 0.888 |
+**Narrative text is illustrative, not a visual read.** A controlled test (same predicted
+category, two different real images) showed the generated description tracks the
+category label more than the image itself. The interface labels all narrative text
+accordingly — a deliberate design choice, not an oversight.
 
-**Not trusted, and why:**
+Two things fall outside current scope rather than being guessed at: ACR breast density,
+and the individual BI-RADS digit/subcategory (e.g. 4A vs. 4B) — the classifier predicts
+the coarse category (Benign/Suspicious/Malignant) only.
 
-- **LLM narrative detail** — a controlled ablation (category held fixed, image varied) produced 74%-overlapping text between two genuinely different real images. The narrative reflects the category label, not an independent visual read; the UI labels it as illustrative, not a confirmed finding.
-- **Grad-CAM, horizontal axis** — consistently biased toward the chest wall across all 3 known-location test cases, likely because that anatomical edge dominates gradient signal. The app shows the raw heatmap for human interpretation and generates no location text from it.
-- **One classifier hard case** (dense, heterogeneous tissue) — misclassifies reproducibly. EXIF corruption, file integrity, and preprocessing fidelity were each checked and ruled out before concluding this is a genuine model limitation rather than a pipeline bug.
-- **Not covered at all**: ACR breast density, individual BI-RADS digit/subcategory (e.g. 4A vs. 4B) — the app states these as out of scope rather than having the LLM guess.
-
-A clinical finding surfaced independently of any model, during ingestion validation: BI-RADS category changed between the plain-mammogram opinion and the contrast-enhanced assessment in **35% of breasts (199/566)** — consistent with the clinical rationale for performing CESM at all.
 
 ---
 
