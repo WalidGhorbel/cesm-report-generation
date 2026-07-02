@@ -126,6 +126,8 @@ Not included in this repo (dataset licensing + size):
 
    ![LE images loaded, ready to generate](screenshots/02-le-images.png)
 
+   ![Generate LE report button](screenshots/02b-generate-button.png)
+
    Each result shows the classifier's category (color-coded, with confidence) and the LLM's illustrative narrative. For bundled examples, it's shown alongside the real radiologist's finding with a **✓ MATCH / ✗ MISMATCH** badge — the fastest way to see actual accuracy rather than take it on faith.
 
    ![Real finding vs. generated output, with match badges](screenshots/03-real-vs-generated.png)
